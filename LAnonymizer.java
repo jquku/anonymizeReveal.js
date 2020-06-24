@@ -42,11 +42,6 @@ class LAnonymizer {
 			data1.getDefinition().setDataType("updated_at", DataType.createDate(
 					"yyyy-MM-dd HH:mm:ss.SSSSSS"));
 
-			//data2.getDefinition().setDataType("tracking_json", DataType.STRING);
-			//data2	.getDefinition().setAttributeType("tracking_json",
-			//			AttributeType.INSENSITIVE_ATTRIBUTE);
-
-			//data2.getDefinition().setDataType("id", DataType.INTEGER);
 			data2.getDefinition().setDataType("created_at", DataType.createDate(
 					"yyyy-MM-dd HH:mm:ss.SSSSSS"));
 			data2.getDefinition().setDataType("updated_at", DataType.createDate(
