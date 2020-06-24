@@ -5,3 +5,5 @@ for windows or macOS.
 
 #### Architecture
 
+![Screenshot](architektur.png)
+
