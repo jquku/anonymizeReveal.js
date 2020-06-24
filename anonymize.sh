@@ -8,12 +8,10 @@ ALTER TABLE students_anonymized ALTER COLUMN created_at TYPE text, ALTER COLUMN 
 ALTER TABLE tracked_sessions_anonymized ALTER COLUMN created_at TYPE text, ALTER COLUMN updated_at TYPE text;
 \COPY students (id, user_token, created_at, updated_at) TO 'students.csv' CSV HEADER
 \COPY tracked_sessions(id, student_id, created_at, updated_at) TO 'tracked_sessions.csv' CSV HEADER
-\COPY tracked_sessions(tracking_json) TO 'tracking_json.csv' CSV HEADER
 EOF
 java LAnonymizer -cp ./libarx-3.8.0.jar
 sed -i '1d' students_new.csv
 sed -i '1d' tracked_sessions_new.csv
-sed -i '1d' tracking_json.csv
 psql -h localhost -p 5432 -U postgres << EOF
 \c learning_analytics_development
 \COPY students_anonymized(id, user_token, created_at, updated_at) FROM 'students_new.csv' WITH (FORMAT csv);
